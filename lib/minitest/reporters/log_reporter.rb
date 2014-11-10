@@ -4,7 +4,7 @@ module Minitest
       # Force override the IO
       def add_defaults(options)
         super
-        @log_file = 'log/minitest.log'
+        @log_file = options[:log_file] || 'log/minitest.log'
         @io = File.new(@log_file, 'w')
       end
 
